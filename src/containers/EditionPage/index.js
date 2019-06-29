@@ -14,7 +14,8 @@ const EditionPage = ({
 	moodValue,
 	moodHandler,
 	messageValue,
-	messageHandler
+	messageHandler,
+	btnSaveHandler
 }) => {
 	return (
 		<section>
@@ -37,8 +38,15 @@ const EditionPage = ({
 					messageValue={messageValue}
 					messageHandler={messageHandler}
 				/>
-				<Btn className="btn--save" btnText="SAVE" />
-				<Btn className="btn--cancel" btnText="CANCEL" />
+				<Btn className="btn--save" btnText="SAVE" btnHandler={btnSaveHandler} />
+				<Btn
+					className="btn--cancel"
+					btnText="CANCEL"
+					btnHandler={e => {
+						e.preventDefault();
+						console.log(e);
+					}}
+				/>
 			</form>
 			<Link to="/" title="Go to Calendar Page">
 				Calendar Page
@@ -53,7 +61,8 @@ EditionPage.propTypes = {
 	moodValue: PropTypes.string.isRequired,
 	moodHandler: PropTypes.func.isRequired,
 	messageValue: PropTypes.string.isRequired,
-	messageHandler: PropTypes.func.isRequired
+	messageHandler: PropTypes.func.isRequired,
+	btnSaveHandler: PropTypes.func.isRequired
 };
 
 export default EditionPage;
