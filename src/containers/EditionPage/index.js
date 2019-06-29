@@ -4,9 +4,9 @@ import MoodInput from '../../components/MoodInput';
 import MessageInput from '../../components/MessageInput';
 import Btn from '../../components/Btn';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
-import PropTypes from 'prop-types';
 
 const EditionPage = ({
 	dateValue,

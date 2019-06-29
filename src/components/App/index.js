@@ -12,7 +12,7 @@ class App extends React.Component {
 		this.state = {
 			newMoodData: {
 				dateValue: '',
-				moodValue: ':)',
+				moodValue: ':(',
 				messageValue: 'holaaa'
 			},
 			moodDataArr: JSON.parse(localStorage.getItem('moodDataStored')) || []
@@ -30,7 +30,6 @@ class App extends React.Component {
 		this.setState(
 			prevState => {
 				return {
-					// moodDataArr: prevState.moodDataArr.concat('holo')
 					moodDataArr: prevState.moodDataArr.concat(prevState.newMoodData)
 				};
 			},
@@ -39,7 +38,6 @@ class App extends React.Component {
 					'moodDataStored',
 					JSON.stringify(this.state.moodDataArr)
 				)
-			// localStorage.setItem('moodDataStored', JSON.stringify('holoooo'))
 		);
 	}
 
@@ -90,11 +88,12 @@ class App extends React.Component {
 
 	render() {
 		const { dateValue, moodValue, messageValue } = this.state.newMoodData;
+		const { moodDataArr } = this.state;
 		return (
 			<div className="App">
 				<Switch>
 					<Route exact path="/">
-						<CalendarPage />
+						<CalendarPage moodDataArr={moodDataArr} />
 					</Route>
 
 					<Route path="/edition-page">

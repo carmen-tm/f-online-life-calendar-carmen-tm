@@ -10,7 +10,7 @@ const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 			<input
 				type="radio"
 				name="mood"
-				value={inputId}
+				value={textLabel}
 				id={inputId}
 				checked={moodValue.includes(textLabel)}
 				onChange={moodHandler}
