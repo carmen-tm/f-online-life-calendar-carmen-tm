@@ -34,6 +34,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 |src
     |components
         |-App
+            |-CalendarPage
+                |-...
+                |- Link
+
+            |-EditionPage
+                |-DateInput
+                |-MoodInput
+                |-MoodInput
+                |-MessageInput
+                |-Btn
+                |-Btn
+                |-Link
 
 ```
 
