@@ -1,14 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const MoodInput = props => {
+const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 	return (
 		<div>
-			<label htmlFor="mood">:)</label>
-			<input type="checkbox" name="mood" id="moodHappy" />
+			<label htmlFor="mood">{textLabel}</label>
+			<input
+				type="radio"
+				name="mood"
+				value={inputId}
+				id={inputId}
+				checked={moodValue.includes(textLabel)}
+				onChange={moodHandler}
+			/>
 		</div>
 	);
+};
+
+MoodInput.propTypes = {
+	inputId: PropTypes.string.isRequired,
+	textLabel: PropTypes.string.isRequired,
+	moodValue: PropTypes.string.isRequired,
+	moodHandler: PropTypes.func.isRequired
 };
 
 export default MoodInput;
