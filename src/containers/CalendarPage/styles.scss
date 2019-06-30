@@ -1,0 +1,25 @@
+.calendar__wrapper {
+	margin: 30px 80px 0px;
+
+	@media all and (min-width: 1280px) {
+		margin: 50px 250px;
+	}
+}
+
+.mood-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mood-item {
+	margin: 5px;
+
+	&__image {
+		width: 50px;
+		// fill: red;
+	}
+
+	&__message {
+		background-color: white;
+	}
+}

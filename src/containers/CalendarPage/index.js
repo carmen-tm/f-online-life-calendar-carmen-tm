@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Btn from '../../components/Btn';
+import moment from 'moment';
 import PropTypes from 'prop-types';
+import getSmileFace from '../../services/getSmileFace';
 
 import './styles.scss';
 
 const CalendarPage = ({ moodDataArr, btnNewRecordHandler }) => {
 	return (
-		<div>
+		<div className="calendar__wrapper">
 			<small>CalendarPage</small>
 			<Link to="/edition-page" title="Add a new record!">
 				<Btn
@@ -18,13 +20,19 @@ const CalendarPage = ({ moodDataArr, btnNewRecordHandler }) => {
 			</Link>
 
 			<main>
-				<ul>
+				<ul className="mood-list">
 					{moodDataArr.map((moodItem, index) => {
 						return (
-							<li key={index}>
-								<p>{moodItem.moodValue}</p>
-								<small>{moodItem.dateValue}</small>
-								<p>{moodItem.messageValue}</p>
+							<li key={index} className="mood-item">
+								<img
+									className="mood-item__image"
+									src={getSmileFace(moodItem.moodValue)}
+									alt={moodItem.moodValue}
+								/>
+								<small>
+									{moment(moodItem.dateValue).format('MMMM Do YYYY')}
+								</small>
+								<p className="mood-item__message">{moodItem.messageValue}</p>
 							</li>
 						);
 					})}
