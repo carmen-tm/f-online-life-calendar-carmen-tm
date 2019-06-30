@@ -35,7 +35,14 @@ class App extends React.Component {
 		this.setState(
 			prevState => {
 				return {
-					moodDataArr: prevState.moodDataArr.concat(prevState.newMoodData)
+					moodDataArr: prevState.moodDataArr
+						.concat(prevState.newMoodData)
+						//Sort dates by reformating them with moment
+						.sort(
+							(a, b) =>
+								moment(a.dateValue).format('YYYYMMDD') -
+								moment(b.dateValue).format('YYYYMMDD')
+						)
 				};
 			},
 			() =>
