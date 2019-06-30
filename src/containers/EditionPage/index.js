@@ -15,7 +15,8 @@ const EditionPage = ({
 	moodHandler,
 	messageValue,
 	messageHandler,
-	btnSaveHandler
+	btnSaveHandler,
+	btnCancelHandler
 }) => {
 	return (
 		<section>
@@ -38,19 +39,23 @@ const EditionPage = ({
 					messageValue={messageValue}
 					messageHandler={messageHandler}
 				/>
-				<Btn className="btn--save" btnText="SAVE" btnHandler={btnSaveHandler} />
-				<Btn
-					className="btn--cancel"
-					btnText="CANCEL"
-					btnHandler={e => {
-						e.preventDefault();
-						console.log(e);
-					}}
-				/>
+
+				<Link to="/" title="Save and go to Calendar">
+					<Btn
+						className="btn--save"
+						btnText="SAVE"
+						btnHandler={btnSaveHandler}
+					/>
+				</Link>
+
+				<Link to="/" title="Clear data and go to Calendar">
+					<Btn
+						className="btn--cancel"
+						btnText="CANCEL"
+						btnHandler={btnCancelHandler}
+					/>
+				</Link>
 			</form>
-			<Link to="/" title="Go to Calendar Page">
-				Calendar Page
-			</Link>
 		</section>
 	);
 };
@@ -62,7 +67,8 @@ EditionPage.propTypes = {
 	moodHandler: PropTypes.func.isRequired,
 	messageValue: PropTypes.string.isRequired,
 	messageHandler: PropTypes.func.isRequired,
-	btnSaveHandler: PropTypes.func.isRequired
+	btnSaveHandler: PropTypes.func.isRequired,
+	btnCancelHandler: PropTypes.func.isRequired
 };
 
 export default EditionPage;

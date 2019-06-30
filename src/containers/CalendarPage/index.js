@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const CalendarPage = ({ moodDataArr }) => {
-	console.log(moodDataArr);
 	return (
 		<div>
 			<small>CalendarPage</small>

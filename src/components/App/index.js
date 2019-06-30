@@ -23,7 +23,9 @@ class App extends React.Component {
 		this.dateHandler = this.dateHandler.bind(this);
 		this.moodHandler = this.moodHandler.bind(this);
 		this.messageHandler = this.messageHandler.bind(this);
+
 		this.btnSaveHandler = this.btnSaveHandler.bind(this);
+		this.btnCancelHandler = this.btnCancelHandler.bind(this);
 	}
 
 	storeInfoLS() {
@@ -82,8 +84,17 @@ class App extends React.Component {
 	};
 
 	btnSaveHandler = e => {
-		e.preventDefault();
 		this.storeInfoLS();
+	};
+
+	btnCancelHandler = () => {
+		this.setState({
+			newMoodData: {
+				dateValue: '',
+				moodValue: ':)',
+				messageValue: ''
+			}
+		});
 	};
 
 	render() {
@@ -105,6 +116,7 @@ class App extends React.Component {
 							messageValue={messageValue}
 							messageHandler={this.messageHandler}
 							btnSaveHandler={this.btnSaveHandler}
+							btnCancelHandler={this.btnCancelHandler}
 						/>
 					</Route>
 				</Switch>
