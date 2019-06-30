@@ -1,16 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Btn from '../../components/Btn';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const CalendarPage = ({ moodDataArr }) => {
+const CalendarPage = ({ moodDataArr, btnNewRecordHandler }) => {
 	return (
 		<div>
 			<small>CalendarPage</small>
-			<Link to="/edition-page" title="Go to the Edition Page">
-				+
+			<Link to="/edition-page" title="Add a new record!">
+				<Btn
+					className="btn--newRecord"
+					btnText="+"
+					btnHandler={btnNewRecordHandler}
+				/>
 			</Link>
+
 			<main>
 				<ul>
 					{moodDataArr.map((moodItem, index) => {
@@ -29,7 +35,8 @@ const CalendarPage = ({ moodDataArr }) => {
 };
 
 CalendarPage.propTypes = {
-	moodDataArr: PropTypes.arrayOf(PropTypes.object).isRequired
+	moodDataArr: PropTypes.arrayOf(PropTypes.object).isRequired,
+	btnNewRecordHandler: PropTypes.func.isRequired
 };
 
 export default CalendarPage;

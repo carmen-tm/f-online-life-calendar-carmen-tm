@@ -1,6 +1,7 @@
 import React from 'react';
 import CalendarPage from '../../containers/CalendarPage';
 import EditionPage from './../../containers/EditionPage';
+import moment from 'moment';
 import { Route, Switch } from 'react-router-dom';
 
 import './styles.scss';
@@ -11,12 +12,14 @@ class App extends React.Component {
 
 		this.state = {
 			newMoodData: {
-				dateValue: '',
-				moodValue: ':(',
-				messageValue: 'holaaa'
+				dateValue: moment(new Date()).format('YYYY-MM-DD'),
+				moodValue: ':)',
+				messageValue: ''
 			},
 			moodDataArr: JSON.parse(localStorage.getItem('moodDataStored')) || []
 		};
+
+		console.log(this.state.newMoodData.dateValue);
 
 		//Binding all methods
 		this.storeInfoLS = this.storeInfoLS.bind(this);
@@ -25,7 +28,7 @@ class App extends React.Component {
 		this.messageHandler = this.messageHandler.bind(this);
 
 		this.btnSaveHandler = this.btnSaveHandler.bind(this);
-		this.btnCancelHandler = this.btnCancelHandler.bind(this);
+		this.resetMoodData = this.resetMoodData.bind(this);
 	}
 
 	storeInfoLS() {
@@ -87,15 +90,15 @@ class App extends React.Component {
 		this.storeInfoLS();
 	};
 
-	btnCancelHandler = () => {
+	resetMoodData() {
 		this.setState({
 			newMoodData: {
-				dateValue: '',
+				dateValue: moment(new Date()).format('YYYY-MM-DD'),
 				moodValue: ':)',
 				messageValue: ''
 			}
 		});
-	};
+	}
 
 	render() {
 		const { dateValue, moodValue, messageValue } = this.state.newMoodData;
@@ -104,7 +107,10 @@ class App extends React.Component {
 			<div className="App">
 				<Switch>
 					<Route exact path="/">
-						<CalendarPage moodDataArr={moodDataArr} />
+						<CalendarPage
+							moodDataArr={moodDataArr}
+							btnNewRecordHandler={this.resetMoodData}
+						/>
 					</Route>
 
 					<Route path="/edition-page">
@@ -116,7 +122,7 @@ class App extends React.Component {
 							messageValue={messageValue}
 							messageHandler={this.messageHandler}
 							btnSaveHandler={this.btnSaveHandler}
-							btnCancelHandler={this.btnCancelHandler}
+							btnCancelHandler={this.resetMoodData}
 						/>
 					</Route>
 				</Switch>
