@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import getSmileFace from '../../services/getSmileFace';
 
 import './styles.scss';
 
 const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 	return (
-		<div>
-			<label className="mood" htmlFor="mood">
-				{/* {textLabel} */}
+		<div className="mood-input">
+			<label className="mood-input__label" htmlFor="mood">
+				<img
+					className="mood-input__image"
+					src={getSmileFace(textLabel)}
+					alt={textLabel}
+				/>
 			</label>
 			<input
 				type="radio"

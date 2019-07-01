@@ -14,8 +14,6 @@
 	transition: all 0.3s ease-in;
 
 	&:hover {
-		// background-color: $color-neutral-1000;
-		// // color: $color-primary;
 		opacity: 1;
 	}
 }
@@ -41,9 +39,11 @@
 	margin-bottom: 30px;
 	font-size: 40px;
 	cursor: pointer;
+	opacity: 0.7;
+
 	transition: all 0.3s ease-in;
 
 	&:hover {
-		color: $color-primary;
+		opacity: 1;
 	}
 }

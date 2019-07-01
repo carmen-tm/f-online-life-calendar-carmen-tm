@@ -1,6 +1,14 @@
 @import '../../scss/variables';
 
-.mood {
-	color: $color-primary;
-	padding-right: 10px;
+.mood-input {
+	display: flex;
+	align-items: center;
+
+	&__image {
+		width: 50px;
+	}
+	&__label {
+		color: $color-primary;
+		padding-right: 10px;
+	}
 }
