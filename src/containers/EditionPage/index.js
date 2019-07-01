@@ -19,22 +19,25 @@ const EditionPage = ({
 	btnCancelHandler
 }) => {
 	return (
-		<section>
-			<small>Editor</small>
-			<form action="post">
+		<div className="edition__wrapper">
+			<h1 className="page__title">Editor</h1>
+			<form className="form" action="post">
 				<DateInput dateValue={dateValue} dateHandler={dateHandler} />
-				<MoodInput
-					inputId="moodHappy"
-					textLabel=":)"
-					moodValue={moodValue}
-					moodHandler={moodHandler}
-				/>
-				<MoodInput
-					inputId="moodSad"
-					textLabel=":("
-					moodValue={moodValue}
-					moodHandler={moodHandler}
-				/>
+				<fieldset className="form__fieldset">
+					<legend className="form__legend">Mood</legend>
+					<MoodInput
+						inputId="moodHappy"
+						textLabel=":)"
+						moodValue={moodValue}
+						moodHandler={moodHandler}
+					/>
+					<MoodInput
+						inputId="moodSad"
+						textLabel=":("
+						moodValue={moodValue}
+						moodHandler={moodHandler}
+					/>
+				</fieldset>
 				{moodValue === ':)' ? (
 					<MessageInput
 						messageValue={messageValue}
@@ -45,7 +48,7 @@ const EditionPage = ({
 				<Link to="/" title="Save and go to Calendar">
 					<Btn
 						className="btn--save"
-						btnText="SAVE"
+						btnText="Save"
 						btnHandler={btnSaveHandler}
 					/>
 				</Link>
@@ -53,12 +56,12 @@ const EditionPage = ({
 				<Link to="/" title="Clear data and go to Calendar">
 					<Btn
 						className="btn--cancel"
-						btnText="CANCEL"
+						btnText="Cancel"
 						btnHandler={btnCancelHandler}
 					/>
 				</Link>
 			</form>
-		</section>
+		</div>
 	);
 };
 

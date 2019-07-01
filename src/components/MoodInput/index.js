@@ -6,7 +6,9 @@ import './styles.scss';
 const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 	return (
 		<div>
-			<label htmlFor="mood">{textLabel}</label>
+			<label className="mood" htmlFor="mood">
+				{textLabel}
+			</label>
 			<input
 				type="radio"
 				name="mood"

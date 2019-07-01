@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.form {
+	border: none;
+
+	&__legend {
+		display: block;
+		color: $color-neutral-700;
+		margin-top: 20px;
+		// border: inherit;
+	}
+
+	&__fieldset {
+		border: inherit;
+	}
+
+	&__item {
+		border: inherit;
+	}
+}
+
+.edition__wrapper {
+	margin: 30px 70px 0px;
+
+	@media all and (min-width: 1280px) {
+		margin: 50px 250px;
+	}
+}

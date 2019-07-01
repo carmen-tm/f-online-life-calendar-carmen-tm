@@ -10,14 +10,16 @@ import './styles.scss';
 const CalendarPage = ({ moodDataArr, btnNewRecordHandler }) => {
 	return (
 		<div className="calendar__wrapper">
-			<small>CalendarPage</small>
-			<Link to="/edition-page" title="Add a new record!">
-				<Btn
-					className="btn--newRecord"
-					btnText="+"
-					btnHandler={btnNewRecordHandler}
-				/>
-			</Link>
+			<header>
+				<h1 className="page__title">CalendarPage</h1>
+				<Link to="/edition-page" title="Add a new record!">
+					<Btn
+						className="btn--newRecord"
+						btnText="+"
+						btnHandler={btnNewRecordHandler}
+					/>
+				</Link>
+			</header>
 
 			<main>
 				<ul className="mood-list">

@@ -6,8 +6,16 @@ import './styles.scss';
 const DateInput = ({ dateValue, dateHandler }) => {
 	return (
 		<div>
-			<label htmlFor="date">Date</label>
-			<input type="date" id="date" value={dateValue} onChange={dateHandler} />
+			<label className="form__legend" htmlFor="date">
+				Date
+			</label>
+			<input
+				className="form__item date"
+				type="date"
+				id="date"
+				value={dateValue}
+				onChange={dateHandler}
+			/>
 		</div>
 	);
 };
