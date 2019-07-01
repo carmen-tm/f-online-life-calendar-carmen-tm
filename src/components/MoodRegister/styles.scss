@@ -6,18 +6,36 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
-	// width: 50px;
 
 	&__message {
 		background-color: $color-neutral-0;
-		margin-bottom: 10px;
-		max-width: 50px;
-		// padding: 5px;
+		border-radius: 10px;
+		width: 100px;
+		margin: 20px auto;
+		padding: 5px;
+		text-align: center;
+		position: relative;
+
+		// font-weight: 900;
+		color: $color-primary;
+
+		//Triangle of the bubble speach shape
+		&:after {
+			content: '';
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			border-top: 10px solid $color-neutral-0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			right: 40%;
+			bottom: -18px;
+		}
 	}
 
 	&__image {
 		width: 50px;
-		// fill: red;
 	}
 
 	&__date {

@@ -1,7 +1,32 @@
+@import '../../scss/variables';
+
+.bubble-container {
+	position: relative;
+	//Triangle of the bubble speach shape
+	&:before {
+		content: '';
+		width: 0px;
+		height: 0px;
+		position: absolute;
+		border-top: 10px solid transparent;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid $color-neutral-0;
+		right: 40%;
+		bottom: -18px;
+	}
+}
+
 .message {
 	width: 100%;
 	height: 100px;
 	padding: 5px;
-
 	margin-bottom: 20px;
+
+	background-color: $color-neutral-0;
+	border-radius: 10px;
+	position: relative;
+
+	padding: 20px;
+	color: $color-primary;
 }

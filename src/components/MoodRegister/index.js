@@ -8,7 +8,10 @@ import './styles.scss';
 const MoodRegister = ({ moodItem }) => {
 	return (
 		<div className="mood-item">
-			<p className="mood-item__message">{moodItem.message}</p>
+			{moodItem.message ? (
+				<p className="mood-item__message">{moodItem.message}</p>
+			) : null}
+
 			<img
 				className="mood-item__image"
 				src={getSmileFace(moodItem.mood)}
