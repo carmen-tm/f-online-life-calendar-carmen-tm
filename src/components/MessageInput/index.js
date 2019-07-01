@@ -5,7 +5,7 @@ import './styles.scss';
 
 const MessageInput = ({ message, moodInputsHandler }) => {
 	return (
-		<div>
+		<div className="bubble-container">
 			<label className="form__legend" htmlFor="message">
 				Mensaje <span>(opcional)</span>
 			</label>
