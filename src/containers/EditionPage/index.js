@@ -35,10 +35,12 @@ const EditionPage = ({
 					moodValue={moodValue}
 					moodHandler={moodHandler}
 				/>
-				<MessageInput
-					messageValue={messageValue}
-					messageHandler={messageHandler}
-				/>
+				{moodValue === ':)' ? (
+					<MessageInput
+						messageValue={messageValue}
+						messageHandler={messageHandler}
+					/>
+				) : null}
 
 				<Link to="/" title="Save and go to Calendar">
 					<Btn
