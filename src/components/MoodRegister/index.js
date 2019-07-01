@@ -7,7 +7,10 @@ import './styles.scss';
 
 const MoodRegister = ({ moodItem }) => {
 	return (
-		<div className="mood-item">
+		<div
+			className="mood-item"
+			title={moodItem.mood === ':)' ? 'yeyyy!' : 'ayns...'}
+		>
 			{moodItem.message ? (
 				<p className="mood-item__message">{moodItem.message}</p>
 			) : null}
