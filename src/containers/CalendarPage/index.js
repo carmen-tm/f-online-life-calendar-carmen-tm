@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Btn from '../../components/Btn';
-import moment from 'moment';
 import PropTypes from 'prop-types';
-import getSmileFace from '../../services/getSmileFace';
+import MoodRegister from '../../components/MoodRegister';
 
 import './styles.scss';
 
@@ -26,15 +25,7 @@ const CalendarPage = ({ moodDataArr, btnNewRecordHandler }) => {
 					{moodDataArr.map((moodItem, index) => {
 						return (
 							<li key={index} className="mood-item">
-								<img
-									className="mood-item__image"
-									src={getSmileFace(moodItem.moodValue)}
-									alt={moodItem.moodValue}
-								/>
-								<small>
-									{moment(moodItem.dateValue).format('MMMM Do YYYY')}
-								</small>
-								<p className="mood-item__message">{moodItem.messageValue}</p>
+								<MoodRegister moodItem={moodItem} />
 							</li>
 						);
 					})}

@@ -7,7 +7,7 @@ const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 	return (
 		<div>
 			<label className="mood" htmlFor="mood">
-				{textLabel}
+				{/* {textLabel} */}
 			</label>
 			<input
 				type="radio"

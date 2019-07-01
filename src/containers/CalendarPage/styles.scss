@@ -13,19 +13,6 @@
 	flex-wrap: wrap;
 }
 
-.mood-item {
-	margin: 5px;
-
-	&__image {
-		width: 50px;
-		// fill: red;
-	}
-
-	&__message {
-		background-color: $color-neutral-0;
-	}
-}
-
 .page__title {
 	font-size: 12px;
 	margin-bottom: 5px;

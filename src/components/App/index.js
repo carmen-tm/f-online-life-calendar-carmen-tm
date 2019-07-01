@@ -19,8 +19,6 @@ class App extends React.Component {
 			moodDataArr: JSON.parse(localStorage.getItem('moodDataStored')) || []
 		};
 
-		console.log(this.state.newMoodData.dateValue);
-
 		//Binding all methods
 		this.storeInfoLS = this.storeInfoLS.bind(this);
 		this.dateHandler = this.dateHandler.bind(this);

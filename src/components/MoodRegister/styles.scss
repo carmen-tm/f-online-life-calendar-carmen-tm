@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+
+.mood-item {
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	// width: 50px;
+
+	&__message {
+		background-color: $color-neutral-0;
+		margin-bottom: 10px;
+		max-width: 50px;
+		// padding: 5px;
+	}
+
+	&__image {
+		width: 50px;
+		// fill: red;
+	}
+
+	&__date {
+		color: $color-neutral-700;
+		font-size: 14px;
+	}
+}

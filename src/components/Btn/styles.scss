@@ -9,6 +9,15 @@
 	color: $color-neutral-0;
 	border-radius: 5px;
 	text-transform: uppercase;
+	opacity: 0.8;
+
+	transition: all 0.3s ease-in;
+
+	&:hover {
+		// background-color: $color-neutral-1000;
+		// // color: $color-primary;
+		opacity: 1;
+	}
 }
 
 .btn--cancel {
@@ -18,6 +27,12 @@
 	padding: 5px;
 	cursor: pointer;
 	color: $color-neutral-700;
+
+	transition: all 0.3s ease-in;
+
+	&:hover {
+		color: $color-primary;
+	}
 }
 
 .btn--newRecord {
@@ -26,4 +41,9 @@
 	margin-bottom: 30px;
 	font-size: 40px;
 	cursor: pointer;
+	transition: all 0.3s ease-in;
+
+	&:hover {
+		color: $color-primary;
+	}
 }
