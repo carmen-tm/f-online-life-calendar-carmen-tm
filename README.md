@@ -1,11 +1,11 @@
 # MOOD CALENDAR
 
 This project is a WebApp Mood Calendar to store and visualize the mood.
-It's created as a Single-Page-Application (SPA) using React, using the LocalStorage API service: [........](...........).
+It's created as a Single-Page-Application (SPA) using React, using the [LocalStorage service](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 ## Getting Started
 
-You don't need to clone or install this repo to play. Just click on the following link [.......](......) and have fun!
+You don't need to clone or install this repo to play. Just click on the following link [Mood Calendar](http://beta.adalab.es/f-online-life-calendar-carmen-tm/) and have fun!
 
 If you want to download, clone or fork the project repository, do the following:
 
@@ -27,6 +27,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [node-sass](https://www.npmjs.com/package/node-sass)
 - [react-dom](https://www.npmjs.com/package/react-dom)
 - [prop-types](https://www.npmjs.com/package/prop-types)
+- [moment](https://www.npmjs.com/package/moment)
 
 ## React components architecture
 
@@ -35,17 +36,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     |components
         |-App
             |-CalendarPage
-                |-...
                 |- Link
+                    |- Btn
 
             |-EditionPage
                 |-DateInput
                 |-MoodInput
                 |-MoodInput
                 |-MessageInput
-                |-Btn
-                |-Btn
-                |-Link
+                |- Link
+                    |- Btn
+                |- Link
+                    |- Btn
 
 ```
 
@@ -59,3 +61,4 @@ This project is part of the Online Training (exercise #03) provided by [Adalab](
 
 - Original idea: **Adalab** | [Github](https://github.com/Adalab) | [website](http://adalab.es/) |
 - Development and variations: **Carmen Torrecillas** | [Github](https://github.com/) | [Twitter](https://twitter.com/carmen_TM_) |
+- Cactus icons created by [AomAm](https://thenounproject.com/aomam/collection/cactus-vol1-emoticons-line/) for the Noun Project (Creative Commons CCBY).
