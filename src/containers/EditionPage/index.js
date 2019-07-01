@@ -9,12 +9,10 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const EditionPage = ({
-	dateValue,
-	dateHandler,
-	moodValue,
-	moodHandler,
-	messageValue,
-	messageHandler,
+	date,
+	mood,
+	message,
+	moodInputsHandler,
 	btnSaveHandler,
 	btnCancelHandler
 }) => {
@@ -22,26 +20,26 @@ const EditionPage = ({
 		<div className="edition__wrapper">
 			<h1 className="page__title">Editor</h1>
 			<form className="form" action="post">
-				<DateInput dateValue={dateValue} dateHandler={dateHandler} />
+				<DateInput date={date} moodInputsHandler={moodInputsHandler} />
 				<fieldset className="form__fieldset">
 					<legend className="form__legend">Mood</legend>
 					<MoodInput
 						inputId="moodHappy"
 						textLabel=":)"
-						moodValue={moodValue}
-						moodHandler={moodHandler}
+						mood={mood}
+						moodInputsHandler={moodInputsHandler}
 					/>
 					<MoodInput
 						inputId="moodSad"
 						textLabel=":("
-						moodValue={moodValue}
-						moodHandler={moodHandler}
+						mood={mood}
+						moodInputsHandler={moodInputsHandler}
 					/>
 				</fieldset>
-				{moodValue === ':)' ? (
+				{mood === ':)' ? (
 					<MessageInput
-						messageValue={messageValue}
-						messageHandler={messageHandler}
+						message={message}
+						moodInputsHandler={moodInputsHandler}
 					/>
 				) : null}
 
@@ -66,12 +64,10 @@ const EditionPage = ({
 };
 
 EditionPage.propTypes = {
-	dateValue: PropTypes.string.isRequired,
-	dateHandler: PropTypes.func.isRequired,
-	moodValue: PropTypes.string.isRequired,
-	moodHandler: PropTypes.func.isRequired,
-	messageValue: PropTypes.string.isRequired,
-	messageHandler: PropTypes.func.isRequired,
+	date: PropTypes.string.isRequired,
+	mood: PropTypes.string.isRequired,
+	message: PropTypes.string.isRequired,
+	moodInputsHandler: PropTypes.func,
 	btnSaveHandler: PropTypes.func.isRequired,
 	btnCancelHandler: PropTypes.func.isRequired
 };

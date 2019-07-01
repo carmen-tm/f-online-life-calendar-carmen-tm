@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const DateInput = ({ dateValue, dateHandler }) => {
+const DateInput = ({ date, moodInputsHandler }) => {
 	return (
 		<div>
 			<label className="form__legend" htmlFor="date">
@@ -13,16 +13,17 @@ const DateInput = ({ dateValue, dateHandler }) => {
 				className="form__item date"
 				type="date"
 				id="date"
-				value={dateValue}
-				onChange={dateHandler}
+				name="date"
+				value={date}
+				onChange={moodInputsHandler}
 			/>
 		</div>
 	);
 };
 
 DateInput.propTypes = {
-	dateValue: PropTypes.string,
-	dateHandler: PropTypes.func.isRequired
+	date: PropTypes.string,
+	moodInputsHandler: PropTypes.func.isRequired
 };
 
 export default DateInput;

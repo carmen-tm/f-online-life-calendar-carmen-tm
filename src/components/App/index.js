@@ -12,19 +12,16 @@ class App extends React.Component {
 
 		this.state = {
 			newMoodData: {
-				dateValue: moment(new Date()).format('YYYY-MM-DD'),
-				moodValue: ':)',
-				messageValue: ''
+				date: moment(new Date()).format('YYYY-MM-DD'),
+				mood: ':)',
+				message: ''
 			},
 			moodDataArr: JSON.parse(localStorage.getItem('moodDataStored')) || []
 		};
 
 		//Binding all methods
+		this.moodInputsHandler = this.moodInputsHandler.bind(this);
 		this.storeInfoLS = this.storeInfoLS.bind(this);
-		this.dateHandler = this.dateHandler.bind(this);
-		this.moodHandler = this.moodHandler.bind(this);
-		this.messageHandler = this.messageHandler.bind(this);
-
 		this.btnSaveHandler = this.btnSaveHandler.bind(this);
 		this.resetMoodData = this.resetMoodData.bind(this);
 	}
@@ -38,8 +35,8 @@ class App extends React.Component {
 						//Sort dates by reformating them with moment
 						.sort(
 							(a, b) =>
-								moment(a.dateValue).format('YYYYMMDD') -
-								moment(b.dateValue).format('YYYYMMDD')
+								moment(a.date).format('YYYYMMDD') -
+								moment(b.date).format('YYYYMMDD')
 						)
 				};
 			},
@@ -51,41 +48,13 @@ class App extends React.Component {
 		);
 	}
 
-	//TODO: refactor the 3 following functions in just one
-	dateHandler = e => {
-		const { value } = e.currentTarget;
-		console.log(value);
+	moodInputsHandler = e => {
+		const { value, name } = e.currentTarget;
 		this.setState(prevState => {
 			return {
 				newMoodData: {
 					...prevState.newMoodData,
-					dateValue: value
-				}
-			};
-		});
-	};
-
-	moodHandler = e => {
-		const { value } = e.currentTarget;
-		console.log(value);
-		this.setState(prevState => {
-			return {
-				newMoodData: {
-					...prevState.newMoodData,
-					moodValue: value
-				}
-			};
-		});
-	};
-
-	messageHandler = e => {
-		const { value } = e.currentTarget;
-		console.log(value);
-		this.setState(prevState => {
-			return {
-				newMoodData: {
-					...prevState.newMoodData,
-					messageValue: value
+					[name]: value
 				}
 			};
 		});
@@ -98,15 +67,15 @@ class App extends React.Component {
 	resetMoodData() {
 		this.setState({
 			newMoodData: {
-				dateValue: moment(new Date()).format('YYYY-MM-DD'),
-				moodValue: ':)',
-				messageValue: ''
+				date: moment(new Date()).format('YYYY-MM-DD'),
+				mood: ':)',
+				message: ''
 			}
 		});
 	}
 
 	render() {
-		const { dateValue, moodValue, messageValue } = this.state.newMoodData;
+		const { date, mood, message } = this.state.newMoodData;
 		const { moodDataArr } = this.state;
 		return (
 			<div className="App">
@@ -120,12 +89,10 @@ class App extends React.Component {
 
 					<Route path="/edition-page">
 						<EditionPage
-							dateValue={dateValue}
-							dateHandler={this.dateHandler}
-							moodValue={moodValue}
-							moodHandler={this.moodHandler}
-							messageValue={messageValue}
-							messageHandler={this.messageHandler}
+							date={date}
+							mood={mood}
+							message={message}
+							moodInputsHandler={this.moodInputsHandler}
 							btnSaveHandler={this.btnSaveHandler}
 							btnCancelHandler={this.resetMoodData}
 						/>

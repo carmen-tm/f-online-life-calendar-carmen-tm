@@ -4,7 +4,7 @@ import getSmileFace from '../../services/getSmileFace';
 
 import './styles.scss';
 
-const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
+const MoodInput = ({ inputId, textLabel, mood, moodInputsHandler }) => {
 	return (
 		<div className="mood-input">
 			<label className="mood-input__label" htmlFor="mood">
@@ -19,8 +19,8 @@ const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 				name="mood"
 				value={textLabel}
 				id={inputId}
-				checked={moodValue.includes(textLabel)}
-				onChange={moodHandler}
+				checked={mood.includes(textLabel)}
+				onChange={moodInputsHandler}
 			/>
 		</div>
 	);
@@ -29,8 +29,8 @@ const MoodInput = ({ inputId, textLabel, moodValue, moodHandler }) => {
 MoodInput.propTypes = {
 	inputId: PropTypes.string.isRequired,
 	textLabel: PropTypes.string.isRequired,
-	moodValue: PropTypes.string.isRequired,
-	moodHandler: PropTypes.func.isRequired
+	mood: PropTypes.string.isRequired,
+	moodInputsHandler: PropTypes.func.isRequired
 };
 
 export default MoodInput;

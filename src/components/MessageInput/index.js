@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const MessageInput = ({ messageValue, messageHandler }) => {
+const MessageInput = ({ message, moodInputsHandler }) => {
 	return (
 		<div>
 			<label className="form__legend" htmlFor="message">
@@ -16,16 +16,16 @@ const MessageInput = ({ messageValue, messageHandler }) => {
 				cols="30"
 				rows="10"
 				placeholder="Why is it a good day...?"
-				value={messageValue}
-				onChange={messageHandler}
+				value={message}
+				onChange={moodInputsHandler}
 			/>
 		</div>
 	);
 };
 
 MessageInput.propTypes = {
-	messageValue: PropTypes.string.isRequired,
-	messageHandler: PropTypes.func.isRequired
+	message: PropTypes.string.isRequired,
+	moodInputsHandler: PropTypes.func.isRequired
 };
 
 export default MessageInput;

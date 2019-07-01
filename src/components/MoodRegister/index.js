@@ -8,11 +8,11 @@ import './styles.scss';
 const MoodRegister = ({ moodItem }) => {
 	return (
 		<div className="mood-item">
-			<p className="mood-item__message">{moodItem.messageValue}</p>
+			<p className="mood-item__message">{moodItem.message}</p>
 			<img
 				className="mood-item__image"
-				src={getSmileFace(moodItem.moodValue)}
-				alt={moodItem.moodValue}
+				src={getSmileFace(moodItem.mood)}
+				alt={moodItem.mood}
 			/>
 			<p className="mood-item__date">
 				{moment(moodItem.dateValue).format('MMMM Do YYYY')}
