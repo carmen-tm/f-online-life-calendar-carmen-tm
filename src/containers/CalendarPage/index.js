@@ -19,7 +19,6 @@ const CalendarPage = ({ moodDataArr, btnNewRecordHandler }) => {
 					/>
 				</Link>
 			</header>
-
 			<main>
 				<ul className="mood-list">
 					{moodDataArr.map((moodItem, index) => {

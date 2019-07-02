@@ -42,7 +42,6 @@ const EditionPage = ({
 						moodInputsHandler={moodInputsHandler}
 					/>
 				) : null}
-
 				<Link to="/" title="Save and go to Calendar">
 					<Btn
 						className="btn--save"
@@ -50,7 +49,6 @@ const EditionPage = ({
 						btnHandler={btnSaveHandler}
 					/>
 				</Link>
-
 				<Link to="/" title="Clear data and go to Calendar">
 					<Btn
 						className="btn--cancel"
