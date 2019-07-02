@@ -6,6 +6,7 @@ import moment from 'moment';
 import './styles.scss';
 
 const MoodRegister = ({ moodItem }) => {
+	console.log(moodItem);
 	return (
 		<div
 			className="mood-item"
@@ -21,7 +22,7 @@ const MoodRegister = ({ moodItem }) => {
 				alt={moodItem.mood}
 			/>
 			<p className="mood-item__date">
-				{moment(moodItem.dateValue).format('MMMM Do YYYY')}
+				{moment(moodItem.date).format('MMMM Do YYYY')}
 			</p>
 		</div>
 	);
